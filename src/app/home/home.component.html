@@ -1,0 +1,33 @@
+<app-header></app-header>
+<app-sidebar></app-sidebar>
+
+<div class="page-wrapper">
+    <div class="row">
+        <div class="col-sm-4 ">
+            <button class="btn btn-success" style="float: left; margin-bottom: 10px;background-color: blue;" routerLink="/addcategory">Add</button>
+        </div>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            
+            <th scope="col">Category Name</th>
+            <th scope="col">Options</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Category Name 1</th>
+            <td><button class="btn btn-warning" routerLink="/editcategory">Edit</button>&nbsp;
+              <button class="btn btn-success">Enable</button>&nbsp;
+              <button class="btn btn-dark">Disable</button>
+          </tr>
+          
+          
+        </tbody>
+      </table>
+</div>
+
+  
