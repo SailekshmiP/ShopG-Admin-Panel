@@ -1,0 +1,37 @@
+<app-header></app-header>
+
+    <div class="card" style="margin-top: 200px;padding: 20px;">
+    <h2 style="text-align: center;"> MENU STYLE</h2>
+    <span class="close"> <Button class="closebutton" routerLink="/menu-style">close x</Button></span>
+
+    <form [formGroup]="editCourseTypeForm">
+
+        <div class="row">
+
+
+            <div class="col-sm-6">
+                <label for="uname"><b> Menu Style Name</b></label>
+                <input type="text" placeholder="Enter Category Name " name="lname" class="form-control"
+                    [(ngModel)]="msname" [ngClass]="{ 'is-invalid': submitted && f.msname.errors }"
+                    formControlName="msname">
+                <div *ngIf="submitted && f.msname.errors" class="invalid-feedback">
+                    <div *ngIf="f.msname.errors.required"> Menu Style Name is required</div>
+                </div>
+            </div>
+
+
+            
+            <div class="col-sm-12">
+                <button class="btn btn-danger" (click)="submit()"
+                    style="margin: 0 auto; display: block;margin-top: 20px;width: 30%;">Submit</button>
+            </div>
+
+        </div>
+
+    </form>
+
+
+</div>
+
+
+

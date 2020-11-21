@@ -77,6 +77,12 @@ li a{
   margin: 0;
 }
 
+.submenu2
+{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 .mainmenu a {
   display: block;
   /* background-color: #CCC; */
@@ -91,9 +97,13 @@ li a{
 
 .mainmenu li:hover .submenu {
   display: block;
-  max-height: 200px;
+  max-height: fit-content;
 }
 
+.mainmenu li ul .menu:hover .submenu2{
+  display: block;
+  max-height: fit-content;
+}
 .submenu a {
   background-color: #999;
 }
@@ -103,6 +113,12 @@ li a{
 }
 
 .submenu {
+  overflow: hidden;
+  max-height: 0;
+  -webkit-transition: all 0.5s ease-out;
+}
+
+.submenu2{
   overflow: hidden;
   max-height: 0;
   -webkit-transition: all 0.5s ease-out;

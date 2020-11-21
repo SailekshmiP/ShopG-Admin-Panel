@@ -3,7 +3,7 @@
 
         <div class="card" style="margin-top: 200px;padding: 20px;">
             <h2 style="text-align: center;" > SHOP REGISTRATION</h2>
-            <span class="close" > <Button class="closebutton" routerLink="/home">close x</Button></span>
+            <span class="close" > <Button class="closebutton" routerLink="/shop">close x</Button></span>
 
             <form [formGroup]="shopFormRegistration">
 
@@ -76,17 +76,17 @@
                 <div class="col-sm-4">
                     <label for="uname"><b>Shop License Number</b></label>
                     <input type="text" placeholder="Enter Shop License Number " name="lname" class="form-control"[(ngModel)]="slicense"
-                    [ngClass]="{ 'is-invalid': submitted && f.slicense.errors }" formControlName="sliceb" 
+                    [ngClass]="{ 'is-invalid': submitted && f.slicense.errors }" formControlName="slicense" 
                     >
-                    <div *ngIf="submitted && f.saddress.errors" class="invalid-feedback">
-                        <div *ngIf="f.saddress.errors.required">Shop License Number is required</div>
+                    <div *ngIf="submitted && f.slicense.errors" class="invalid-feedback">
+                        <div *ngIf="f.slicense.errors.required">Shop License Number is required</div>
                    </div>
                 </div>
 
                 <div class="col-sm-4">
                     <label for="uname"><b> Shop GST Number</b></label>
                     <input type="text" placeholder="Enter GST Number " name="lname" class="form-control"[(ngModel)]="sgst"
-                    [ngClass]="{ 'is-invalid': submitted && f.saddress.errors }" formControlName="sgst" 
+                    [ngClass]="{ 'is-invalid': submitted && f.sgst.errors }" formControlName="sgst" 
                     >
                     <div *ngIf="submitted && f.sgst.errors" class="invalid-feedback">
                         <div *ngIf="f.sgst.errors.required">Shop GST is required</div>
@@ -165,7 +165,7 @@
 
                 <div class="col-sm-4">
                     <label for="uname"><b>Display Mode</b></label>
-                    <select class="form-control" [(ngModel)]="dmode" [ngClass]="{ 'is-invalid': submitted && f.mtype.errors }" formControlName="dmode">
+                    <select class="form-control" [(ngModel)]="dmode" [ngClass]="{ 'is-invalid': submitted && f.dmode.errors }" formControlName="dmode">
                         <option value="" disabled>Choose a type</option>
                         <option value="tile mode">Tile</option>
                         <option value="grid mode">Grid</option>
@@ -176,6 +176,29 @@
                         
                     </div> 
                 </div> 
+
+                <div class="col-sm-4" style="margin-top: 10px;">
+                    <label for=""> <b>Shop API Codes</b> </label>
+                    <br>
+                    YES
+                    <input type="radio" value="active">
+                    NO
+                    <input type="radio" value="inactive">
+    
+                </div>
+    
+    
+                <!-- <div class="col-sm-4">
+                    <label for="uname"><b>Sat</b></label> -->
+                    <!-- <input type="text" placeholder="Enter Shop Closing Time " name="lname" class="form-control"[(ngModel)]="ctime"
+                    [ngClass]="{ 'is-invalid': submitted && f.ctime.errors }" formControlName="ctime" 
+                    >
+                    <div *ngIf="submitted && f.ctime.errors" class="invalid-feedback">
+                        <div *ngIf="f.ctime.errors.required">Shop Closing Time is required</div>
+                    </div> -->
+
+                <!-- </div> -->
+
                     
 
                 <!-- <div class="col-sm-4">

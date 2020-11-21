@@ -1,11 +1,9 @@
 .card{
-    /* width: 1057px;
-    height: 293px; */
+       
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     margin-left: 100px;
     margin-right: 100px;
     margin-bottom: 5S0px;
-    
 }
 .close{
     text-align: end;

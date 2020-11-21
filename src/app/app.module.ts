@@ -21,6 +21,18 @@ import { EditmenuitemsComponent } from './editmenuitems/editmenuitems.component'
 import { ReportsComponent } from './reports/reports.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddmenuComponent } from './addmenu/addmenu.component';
+import { MenuCourseTypeComponent } from './Restaurant_Style_Section/menu-course-type/menu-course-type.component';
+import { MenuSubCourseComponent } from './Restaurant_Style_Section/menu-sub-course/menu-sub-course.component';
+import { MenuStyleComponent } from './Restaurant_Style_Section/menu-style/menu-style.component';
+import { AddMenuCourseTypeComponent } from './Restaurant_Style_Section/menu-course-type/add-menu-course-type/add-menu-course-type.component';
+import { EditMenuCourseTypeComponent } from './Restaurant_Style_Section/menu-course-type/edit-menu-course-type/edit-menu-course-type.component';
+import { AddMenuStyleComponent } from './Restaurant_Style_Section/menu-style/add-menu-style/add-menu-style.component';
+import { EditMenuStyleComponent } from './Restaurant_Style_Section/menu-style/edit-menu-style/edit-menu-style.component';
+import { AddMenuSubCourseTypeComponent } from './Restaurant_Style_Section/menu-sub-course/add-menu-sub-course-type/add-menu-sub-course-type.component';
+import { EditMenuSubCourseTypeComponent } from './Restaurant_Style_Section/menu-sub-course/edit-menu-sub-course-type/edit-menu-sub-course-type.component';
+import { RestaurantMenuPointedToShopComponent } from './restaurant-menu-pointed-to-shop/restaurant-menu-pointed-to-shop.component';
+import { BusinessModelsComponent } from './business-models/business-models.component';
+import { GrocerySupermarketComponent } from './grocery-supermarket/grocery-supermarket.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +53,20 @@ import { AddmenuComponent } from './addmenu/addmenu.component';
     MenuitemsComponent,
     EditmenuitemsComponent,
     ReportsComponent,
-    AddmenuComponent
+    AddmenuComponent,
+    MenuCourseTypeComponent,
+    MenuSubCourseComponent,
+    MenuStyleComponent,
+    AddMenuCourseTypeComponent,
+    EditMenuCourseTypeComponent,
+    AddMenuStyleComponent,
+    EditMenuStyleComponent,
+    AddMenuSubCourseTypeComponent,
+    EditMenuSubCourseTypeComponent,
+    RestaurantMenuPointedToShopComponent,
+    BusinessModelsComponent,
+    GrocerySupermarketComponent,
+    
   ],
   imports: [
     BrowserModule,

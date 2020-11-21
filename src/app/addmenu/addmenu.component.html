@@ -3,7 +3,7 @@
 
 <div class="card" style="margin-top: 200px;padding: 20px;">
     <h2 style="text-align: center;">MENU REGISTRATION</h2>
-    <span class="close"> <Button class="closebutton" routerLink="/home">close x</Button></span>
+    <span class="close"> <Button class="closebutton" routerLink="/menuitems">close x</Button></span>
 
     <form [formGroup]="menuFormRegistration">
 
@@ -25,7 +25,7 @@
                     [ngClass]="{ 'is-invalid': submitted && f.sdes.errors }" formControlName="sdes">
                 <div *ngIf="submitted && f.sdes.errors" class="invalid-feedback">
                     <div *ngIf="f.sdes.errors.required">Short Description is required</div>
-                    <div *ngIf="f.sdes.errors.maxlength">30 Characters is required </div>
+                    <div *ngIf="f.sdes.errors.maxlength">20 Characters is required </div>
                 </div>
             </div>
 
@@ -35,7 +35,7 @@
                     [ngClass]="{ 'is-invalid': submitted && f.des.errors }" formControlName="des">
                 <div *ngIf="submitted && f.des.errors" class="invalid-feedback">
                     <div *ngIf="f.des.errors.required"> Description is required</div>
-                    
+                    <div *ngIf="f.sdes.errors.maxlength">50 Characters is required </div>
                 </div>
             </div>
 
@@ -79,6 +79,26 @@
             </div>
 
             <div class="col-sm-4">
+                <label for="uname"><b>Menu SubCourse Type </b></label>
+                <select class="form-control" [(ngModel)]="mtype" [ngClass]="{ 'is-invalid': submitted && f.mtype.errors }" formControlName="msctype">
+                    <option value="" disabled>Choose a type</option>
+                    <option value="veg">Breads</option>
+                    <option value="non-veg">Biriyani</option>
+                    <!-- <option value="non-veg">Lunch</option>
+                    <option value="non-veg">Dinner</option>
+                    <option value="non-veg">Snack</option>
+                    <option value="non-veg">Hot Drinks</option>
+                    <option value="non-veg">Cool Drinks</option>
+                    <option value="non-veg">Juices</option>
+                    <option value="non-veg">Deserts</option> -->
+                </select>
+                <div *ngIf="submitted && f.mtype.errors" class="invalid-feedback">
+                    <div *ngIf="f.mtype.errors.required"> Menu Type is required</div>
+                    
+                </div> 
+            </div>
+
+            <div class="col-sm-4">
                 <label for="uname"><b>Menu Style </b></label>
                 <select class="form-control" [(ngModel)]="mstyle" [ngClass]="{ 'is-invalid': submitted && f.mtype.errors }" formControlName="mstyle">
                     <option value="" disabled>Choose a type</option>
@@ -97,6 +117,16 @@
                     <div *ngIf="f.mstyle.errors.required"> Menu Style is required</div>
                     
                 </div> 
+            </div>
+
+            <div class="col-sm-4" style="margin-top: 10px;">
+                <label for=""> <b>Menu Variant</b> </label>
+                <br>
+                YES
+                <input type="radio" value="active">
+                NO
+                <input type="radio" value="inactive">
+
             </div>
 
 

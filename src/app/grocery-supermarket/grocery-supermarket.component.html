@@ -1,0 +1,103 @@
+<app-header></app-header>
+
+<div class="card" style="margin-top: 200px;padding: 20px;">
+    <h2 style="text-align: center;"> GROCERY / SUPERMARKET REGISTRATION</h2>
+    <span class="close"> <Button class="closebutton" routerLink="/home">close x</Button></span>
+
+    <form [formGroup]="grocerysupermarkets">
+
+        <div class="row">
+
+
+            <div class="col-sm-4">
+                <label for="iname"><b>Item Name</b></label>
+                <input type="text" placeholder="Enter Item Name " name="lname" class="form-control"
+                    [(ngModel)]="iname" [ngClass]="{ 'is-invalid': submitted && f.iname.errors }"
+                    formControlName="iname">
+                <div *ngIf="submitted && f.iname.errors" class="invalid-feedback">
+                    <div *ngIf="f.iname.errors.required">Item Name is required</div>
+                </div>
+            </div>
+            
+            <div class="col-sm-4">
+                <label for="ides"><b>Item Description</b></label>
+                <input type="text" placeholder="Enter Item Description " name="lname" class="form-control"
+                    [(ngModel)]="ides" [ngClass]="{ 'is-invalid': submitted && f.ides.errors }"
+                    formControlName="ides">
+                <div *ngIf="submitted && f.ides.errors" class="invalid-feedback">
+                    <div *ngIf="f.ides.errors.required">Item Description is required</div>
+                    <div *ngIf="f.ides.errors.maxlength">30 Characters is required </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <label for="isdes"><b>Item Short Description </b></label>
+                <input type="text" placeholder="Enter Item Short Description" name="lname" class="form-control" [(ngModel)]="isdes"
+                    [ngClass]="{ 'is-invalid': submitted && f.isdes.errors }" formControlName="isdes">
+                <div *ngIf="submitted && f.isdes.errors" class="invalid-feedback">
+                    <div *ngIf="f.isdes.errors.required">Item Short Description is required</div>
+                    <div *ngIf="f.isdes.errors.maxlength">20 Characters is required </div>
+                    
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <label for="ibname"><b>Item Brand Name</b></label>
+                <input type="text" placeholder="Enter Brand Item Name " name="lname" class="form-control"
+                    [(ngModel)]="ibname" [ngClass]="{ 'is-invalid': submitted && f.ibname.errors }"
+                    formControlName="ibname">
+                <div *ngIf="submitted && f.ibname.errors" class="invalid-feedback">
+                    <div *ngIf="f.ibname.errors.required">Item Brand Name is required</div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <label for="icat"><b>Item Category</b></label>
+                <input type="text" placeholder="Enter Item Category " name="lname" class="form-control"
+                    [(ngModel)]="icat" [ngClass]="{ 'is-invalid': submitted && f.icat.errors }"
+                    formControlName="icat">
+                <div *ngIf="submitted && f.icat.errors" class="invalid-feedback">
+                    <div *ngIf="f.icat.errors.required">Item Category is required</div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <label for="iscat"><b>Item Sub Category</b></label>
+                <input type="text" placeholder="Enter Item Sub Category " name="lname" class="form-control"
+                    [(ngModel)]="iscat" [ngClass]="{ 'is-invalid': submitted && f.iscat.errors }"
+                    formControlName="iscat">
+                <div *ngIf="submitted && f.iscat.errors" class="invalid-feedback">
+                    <div *ngIf="f.iscat.errors.required">Item Sub Category is required</div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <label for="igst"><b>Item GST Percentage</b></label>
+                <input type="text" placeholder="Enter Item GST Percentage " name="lname" class="form-control"
+                    [(ngModel)]="igst" [ngClass]="{ 'is-invalid': submitted && f.igst.errors }"
+                    formControlName="igst">
+                <div *ngIf="submitted && f.igst.errors" class="invalid-feedback">
+                    <div *ngIf="f.igst.errors.required">Item GST Percentage is required</div>
+                </div>
+            </div>
+ 
+            <div class="col-sm-4">
+                <label for="iimages"><b>Item Images</b></label>
+                <input type="file" placeholder="Enter Item Images " name="lname" class="form-control"
+                    [(ngModel)]="iimages" [ngClass]="{ 'is-invalid': submitted && f.iimages.errors }"
+                    formControlName="iimages">
+                <div *ngIf="submitted && f.iimages.errors" class="invalid-feedback">
+                    <div *ngIf="f.iimages.errors.required">Item Images is required</div>
+                </div>
+            </div>
+
+            <div class="col-sm-12">
+                <button class="btn btn-danger" (click)="submit()"
+                    style="margin: 0 auto; display: block;margin-top: 20px;width: 30%;">Submit</button>
+            </div>
+
+        </div>
+
+    </form>
+
+
+</div>

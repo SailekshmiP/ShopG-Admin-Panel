@@ -1,19 +1,89 @@
 <app-header></app-header>
 
-<div class="row">
+<div class="card" style="margin-top: 200px;padding: 20px;">
+    <h2 style="text-align: center;"> CATEGORY REGISTRATION</h2>
+    <span class="close"> <Button class="closebutton" routerLink="/home">close x</Button></span>
 
-    <div class="col-sm-12 ">
-        <div class="card" style="margin-top: 200px;padding: 20px;">
+    <form [formGroup]="categoryFormRegistration">
 
-                <h2 style="text-align: center;" >Add Category</h2>
-                <span class="close" > <Button class="closebutton" routerLink="/home">close x</Button></span>
-          
-           
-            <label for="uname"><b>Category</b></label>
-            <input type="text" placeholder="Enter Category " name="lname" class="form-control">
+        <div class="row">
 
-            
-            <button type="submit" class="btn btn-secondary" style="margin-top: 50px; background-color: rgb(120, 120, 223);">SAVE</button>
+
+            <div class="col-sm-4">
+                <label for="uname"><b>Category Name</b></label>
+                <input type="text" placeholder="Enter Category Name " name="lname" class="form-control"
+                    [(ngModel)]="cname" [ngClass]="{ 'is-invalid': submitted && f.cname.errors }"
+                    formControlName="cname">
+                <div *ngIf="submitted && f.cname.errors" class="invalid-feedback">
+                    <div *ngIf="f.cname.errors.required">Category Name is required</div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <label for="uname"><b>Shop Description</b></label>
+                <input type="text" placeholder="Enter Category Description " name="lname" class="form-control"
+                    [(ngModel)]="sdes" [ngClass]="{ 'is-invalid': submitted && f.sdes.errors }" formControlName="sdes">
+                <div *ngIf="submitted && f.sdes.errors" class="invalid-feedback">
+                    <div *ngIf="f.sdes.errors.required">Category Description is required</div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <label for="uname"><b>Display Mode</b></label>
+                <select class="form-control" [(ngModel)]="dmode"
+                    [ngClass]="{ 'is-invalid': submitted && f.dmode.errors }" formControlName="dmode">
+                    <option value="" disabled>Choose a type</option>
+                    <option value="tile mode">Tile</option>
+                    <option value="grid mode">Grid</option>
+
+                </select>
+                <div *ngIf="submitted && f.dmode.errors" class="invalid-feedback">
+                    <div *ngIf="f.dmode.errors.required">Display Mode is required</div>
+
+                </div>
+            </div>
+
+            <div class="col-sm-4" style="margin-top: 10px;">
+                <label for=""> <b>Status</b> </label>
+                <br>
+                Enable
+                <input type="radio" value="active">
+                Disable
+                <input type="radio" value="inactive">
+
+            </div>
+
+            <div class="col-sm-4" style="margin-top: 10px;">
+                <label for=""> <b>Category Show</b> </label>
+                <br>
+                YES
+                <input type="radio" value="active">
+                NO
+                <input type="radio" value="inactive">
+
+            </div>
+
+
+            <div class="col-sm-4">
+                <label for="uname"><b>Category Images</b></label>
+                <input type="file" placeholder="Enter Category Images " name="lname" class="form-control"
+                    [(ngModel)]="cimages" [ngClass]="{ 'is-invalid': submitted && f.cimages.errors }" formControlName="cimages">
+                <div *ngIf="submitted && f.cimages.errors" class="invalid-feedback">
+                    <div *ngIf="f.cimages.errors.required">Category Images is required</div>
+                </div>
+            </div>
+
+
+
+
+            <div class="col-sm-12">
+                <button class="btn btn-danger" (click)="submit()"
+                    style="margin: 0 auto; display: block;margin-top: 20px;width: 30%;">Submit</button>
+            </div>
+
         </div>
-    </div>
+
+    </form>
+
+
 </div>

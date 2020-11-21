@@ -1,0 +1,56 @@
+<app-header></app-header>
+
+<div class="card" style="margin-top: 200px;padding: 20px;">
+    <h2 style="text-align: center;"> BUSINESS MODELS REGISTRATION</h2>
+    <span class="close"> <Button class="closebutton" routerLink="/home">close x</Button></span>
+
+    <form [formGroup]="businessmodels">
+
+        <div class="row">
+
+
+            <div class="col-sm-4">
+                <label for="bmname"><b>Business Model Name</b></label>
+                <input type="text" placeholder="Enter Business Model Name " name="lname" class="form-control"
+                    [(ngModel)]="bmname" [ngClass]="{ 'is-invalid': submitted && f.bmname.errors }"
+                    formControlName="bmname">
+                <div *ngIf="submitted && f.bmname.errors" class="invalid-feedback">
+                    <div *ngIf="f.bmname.errors.required">Business Model Name is required</div>
+                </div>
+            </div>
+
+            <!-- <div class="col-sm-4">
+                <label for="uname"><b>Business Model Type</b></label>
+                <input type="text" placeholder="Enter Business Model Type " name="lname" class="form-control"
+                    [(ngModel)]="bmtype" [ngClass]="{ 'is-invalid': submitted && f.sdes.errors }" formControlName="bmtype">
+                <div *ngIf="submitted && f.bmtype.errors" class="invalid-feedback">
+                    <div *ngIf="f.bmtype.errors.required">Business Model Type is required</div>
+                </div>
+            </div> -->
+
+            <div class="col-sm-4">
+                <label for="uname"><b>Business Model Type </b></label>
+                <select class="form-control" [(ngModel)]="bmtype" [ngClass]="{ 'is-invalid': submitted && f.bmtype.errors }" formControlName="mtype">
+                    <option value="" disabled>Choose a type</option>
+                    <option value="sales">Sales</option>
+                    <option value="services">Services</option>
+                    <option value="utilities">Utilities</option>
+
+                </select>
+                <div *ngIf="submitted && f.bmtype.errors" class="invalid-feedback">
+                    <div *ngIf="f.bmtype.errors.required"> Menu Type is required</div>
+                    
+                </div> 
+            </div>
+
+            <div class="col-sm-12">
+                <button class="btn btn-danger" (click)="submit()"
+                    style="margin: 0 auto; display: block;margin-top: 20px;width: 30%;">Submit</button>
+            </div>
+
+        </div>
+
+    </form>
+
+
+</div>

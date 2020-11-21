@@ -15,6 +15,7 @@ export class AddmenuComponent implements OnInit {
   des;  
   mtype="";
   mctype="";
+  msctype="";
   mstyle="";
   
   constructor(private formbuilder:FormBuilder) { }
@@ -23,10 +24,11 @@ export class AddmenuComponent implements OnInit {
     this.menuFormRegistration = this.formbuilder.group(
       {
         mname: ['', Validators.required],
-        sdes:['', [Validators.required,Validators.maxLength(30) ]],
-        des: ['', Validators.required],
+        sdes:['', [Validators.required,Validators.maxLength(20) ]],
+        des: ['', [Validators.required ,Validators.maxLength(50) ]],
         mtype: ['', Validators.required],
         mctype: ['', Validators.required],
+        msctype: ['', Validators.required],
         mstyle: ['', Validators.required],
     })
 

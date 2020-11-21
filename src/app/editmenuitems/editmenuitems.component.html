@@ -1,20 +1,128 @@
 <app-header></app-header>
 
-<div class="row">
+<div class="card" style="margin-top: 200px;padding: 20px;">
+    <h2 style="text-align: center;">MENU REGISTRATION</h2>
+    <span class="close"> <Button class="closebutton" routerLink="/menuitems">close x</Button></span>
 
-    <div class="col-sm-12 ">
-        <div class="card" style="margin-top: 200px;padding: 20px;">
+    <form [formGroup]="menuFormRegistration">
 
-                <h2 style="text-align: center;" >Edit Menu Items</h2>
-                <span class="close" > <Button class="closebutton">close x</Button></span>
-          
-           
-            <label for="uname"><b>Menu Items</b></label>
-            <input type="text" placeholder="Enter Menu name " name="lname" class="form-control">
+        <div class="row">
 
+
+            <div class="col-sm-4">
+                <label for="uname"><b>Menu Name</b></label>
+                <input type="text" placeholder="Enter Menu Name " name="lname" class="form-control" [(ngModel)]="mname"
+                    [ngClass]="{ 'is-invalid': submitted && f.mname.errors }" formControlName="mname">
+                <div *ngIf="submitted && f.mname.errors" class="invalid-feedback">
+                    <div *ngIf="f.mname.errors.required">Menu Name is required</div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <label for="uname"><b> Short Description </b></label>
+                <input type="text" placeholder="Enter Short Description" name="lname" class="form-control" [(ngModel)]="sdes"
+                    [ngClass]="{ 'is-invalid': submitted && f.sdes.errors }" formControlName="sdes">
+                <div *ngIf="submitted && f.sdes.errors" class="invalid-feedback">
+                    <div *ngIf="f.sdes.errors.required">Short Description is required</div>
+                    <div *ngIf="f.sdes.errors.maxlength">20 Characters is required </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <label for="uname"><b>Description </b></label>
+                <input type="text" placeholder="Enter Description " name="lname" class="form-control" [(ngModel)]="des"
+                    [ngClass]="{ 'is-invalid': submitted && f.des.errors }" formControlName="des">
+                <div *ngIf="submitted && f.des.errors" class="invalid-feedback">
+                    <div *ngIf="f.des.errors.required"> Description is required</div>
+                    <div *ngIf="f.sdes.errors.maxlength">50 Characters is required </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <label for="uname"><b>Menu Type </b></label>
+                <select class="form-control" [(ngModel)]="mtype" [ngClass]="{ 'is-invalid': submitted && f.mtype.errors }" formControlName="mtype">
+                    <option value="" disabled>Choose a type</option>
+                    <option value="veg">Vegetarian</option>
+                    <option value="non-veg">Non-Vegetarian</option>
+                </select>
+                <div *ngIf="submitted && f.mtype.errors" class="invalid-feedback">
+                    <div *ngIf="f.mtype.errors.required"> Menu Type is required</div>
+                    
+                </div> 
+            </div>
+
+            <div class="col-sm-4">
+                <label for="uname"><b>Menu Course Type </b></label>
+                <select class="form-control" [(ngModel)]="mtype" [ngClass]="{ 'is-invalid': submitted && f.mtype.errors }" formControlName="mctype">
+                    <option value="" disabled>Choose a type</option>
+                    <option value="veg">Starter</option>
+                    <option value="non-veg">Breakfast</option>
+                    <option value="non-veg">Lunch</option>
+                    <option value="non-veg">Dinner</option>
+                    <option value="non-veg">Snack</option>
+                    <option value="non-veg">Hot Drinks</option>
+                    <option value="non-veg">Cool Drinks</option>
+                    <option value="non-veg">Juices</option>
+                    <option value="non-veg">Deserts</option>
+                </select>
+                <div *ngIf="submitted && f.mtype.errors" class="invalid-feedback">
+                    <div *ngIf="f.mtype.errors.required"> Menu Type is required</div>
+                    
+                </div> 
+            </div>
+
+            <div class="col-sm-4">
+                <label for="uname"><b>Menu SubCourse Type </b></label>
+                <select class="form-control" [(ngModel)]="mtype" [ngClass]="{ 'is-invalid': submitted && f.mtype.errors }" formControlName="msctype">
+                    <option value="" disabled>Choose a type</option>
+                    <option value="veg">Breads</option>
+                    <option value="non-veg">Biriyani</option>
+                </select>
+                <div *ngIf="submitted && f.mtype.errors" class="invalid-feedback">
+                    <div *ngIf="f.mtype.errors.required"> Menu Type is required</div>
+                    
+                </div> 
+            </div>
+
+            <div class="col-sm-4">
+                <label for="uname"><b>Menu Style </b></label>
+                <select class="form-control" [(ngModel)]="mstyle" [ngClass]="{ 'is-invalid': submitted && f.mtype.errors }" formControlName="mstyle">
+                    <option value="" disabled>Choose a type</option>
+                    <option value="traditional"> Traditional</option>
+                    <option value="kerala">Kerala Style</option>
+                    <option value="chineese">Chineese</option>
+                    <option value="italian">Italian</option>
+                    <option value="mexicon">Mexico</option>
+                    <option value="arabic">Arabic</option>
+                    <option value="pakistani">Pakistani</option>
+                    <option value="dhaba">Dhaba</option>
+                    <option value="seafoods">Seafoods</option>
+                    
+                </select>
+                <div *ngIf="submitted && f.mstyle.errors" class="invalid-feedback">
+                    <div *ngIf="f.mstyle.errors.required"> Menu Style is required</div>
+                    
+                </div> 
+            </div>
+
+            <div class="col-sm-4" style="margin-top: 10px;">
+                <label for=""> <b>Menu Variant</b> </label>
+                <br>
+                YES
+                <input type="radio" value="active">
+                NO
+                <input type="radio" value="inactive">
+
+            </div>
+
+
+
+            <div class="col-sm-12">
+                <button class="btn btn-danger" (click)="submit()" style="margin: 0 auto; display: block;margin-top: 20px;width: 30%;">Submit</button>
+            </div>
             
-            <button type="submit" class="btn btn-secondary" style="margin-top: 50px; background-color: rgb(120, 120, 223);">SAVE</button>
         </div>
-    </div>
+    </form>
+
 </div>
 
